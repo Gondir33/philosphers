@@ -6,7 +6,7 @@
 /*   By: sbendu <sbendu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 11:17:59 by sbendu            #+#    #+#             */
-/*   Updated: 2022/05/17 11:39:54 by sbendu           ###   ########.fr       */
+/*   Updated: 2022/05/21 19:26:14 by sbendu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ void	parse_param(int argc, char **argv, t_param	*param)
 	param->time_to_sleep = ft_atoi(argv[4]);
 	param->time_of_start = 0;
 	param->number_of_times = -1;
+	param->stop = 1;
+	param->number_die = 0;
 	if (argc == 6)
 		param->number_of_times = ft_atoi(argv[5]);
 }

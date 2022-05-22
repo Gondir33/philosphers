@@ -6,7 +6,7 @@
 /*   By: sbendu <sbendu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 15:57:22 by sbendu            #+#    #+#             */
-/*   Updated: 2022/05/17 11:33:08 by sbendu           ###   ########.fr       */
+/*   Updated: 2022/05/21 19:23:44 by sbendu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ typedef struct s_param
 	int				time_to_sleep;
 	int				number_of_times;
 	long			time_of_start;
+	int 			stop;
+	int				number_die;
 	pthread_mutex_t	*mutex_forks;
 	pthread_t		check_alive;
 }t_param;

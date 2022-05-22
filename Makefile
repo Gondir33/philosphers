@@ -6,7 +6,7 @@
 #    By: sbendu <sbendu@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/17 11:16:24 by sbendu            #+#    #+#              #
-#    Updated: 2022/05/17 11:35:33 by sbendu           ###   ########.fr        #
+#    Updated: 2022/05/21 18:15:50 by sbendu           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = philo
 
 CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror -pthread
+CFLAGS = -pthread
 
 INCLD = ./
 
