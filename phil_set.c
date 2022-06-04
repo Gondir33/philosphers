@@ -6,7 +6,7 @@
 /*   By: sbendu <sbendu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 18:01:06 by sbendu            #+#    #+#             */
-/*   Updated: 2022/05/22 09:07:41 by sbendu           ###   ########.fr       */
+/*   Updated: 2022/06/04 13:46:44 by sbendu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	init_phil(t_philo *phil, t_param *param, int i, pthread_mutex_t *forks)
 {
-
 	phil->index = i;
 	phil->param = param;
 	phil->eat_count = 0;
@@ -37,15 +36,17 @@ static int	init_forks(t_param *param)
 	int	i;
 
 	i = -1;
-	param->mutex_forks = (pthread_mutex_t *)malloc(param->number_phil\
-											* sizeof(pthread_mutex_t));
+	param->mutex_forks = (pthread_mutex_t *)ft_calloc(\
+			param->number_phil, sizeof(pthread_mutex_t));
 	if (!param->mutex_forks)
-		return(-1);
+		return (-1);
 	while (++i < param->number_phil)
 	{
 		if (pthread_mutex_init((param->mutex_forks + i), NULL))
 		{
-			free(param->mutex_forks);	
+			while (--i >= 0)
+				pthread_mutex_destroy(&param->mutex_forks[i]);
+			free(param->mutex_forks);
 			return (ft_error("Error:mutex_forks_init"));
 		}	
 	}
@@ -58,11 +59,11 @@ int	phil_set(t_param *param, t_philo **phil)
 	t_philo	*tmp;
 
 	if (init_forks(param) == -1)
-		return(-1);
-	tmp = (t_philo *)malloc(sizeof(t_philo)\
-					* param->number_phil);
+		return (-1);
+	tmp = (t_philo *)ft_calloc(sizeof(t_philo), \
+					param->number_phil);
 	if (tmp == NULL)
-		return (ft_error("Error: malloc philo"));
+		return (ft_error("Error: ft_calloc philo"));
 	i = -1;
 	while (++i < param->number_phil)
 		init_phil(tmp + i, param, i, param->mutex_forks);

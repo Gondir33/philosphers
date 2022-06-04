@@ -6,7 +6,7 @@
 /*   By: sbendu <sbendu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 19:48:12 by sbendu            #+#    #+#             */
-/*   Updated: 2022/05/22 09:31:51 by sbendu           ###   ########.fr       */
+/*   Updated: 2022/06/04 13:38:57 by sbendu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,11 @@ static void	show_actions(t_philo *philo, char *message)
 	printf("%lu %d philosopher %s\n", time, id, message);
 }
 
-static void check_die(t_philo *philo)
+static void	check_die(t_philo *philo)
 {
 	long	last_eat;
 	long	tmp;
-	
+
 	last_eat = get_time() - philo->time_of_eat;
 	if (philo->param->time_to_die < last_eat)
 	{
@@ -46,14 +46,14 @@ static void check_die(t_philo *philo)
 	}
 }
 
-static void *get_start(void *args)
+static void	*get_start(void *args)
 {
 	t_philo	*philo;
 
 	philo = (t_philo *)args;
 	while (philo->alive && philo->eat_count != philo->param->number_of_times)
 	{
-		show_actions(philo,"is thinking");
+		show_actions(philo, "is thinking");
 		pthread_mutex_lock(philo->fork_left);
 		show_actions(philo, "take fork");
 		pthread_mutex_lock(philo->fork_right);
@@ -84,13 +84,15 @@ int	lunch(t_philo *philo)
 	num = philo->param->number_phil;
 	while (++i < num)
 	{
-			(philo + i)->time_of_eat = get_time(); 
-			if (pthread_create(&((philo + i)->pth), NULL, &get_start, philo + i))
-				return (ft_error("Error: philo_pthread_create"));
-			pthread_detach((philo + i)->pth);
-			usleep(50);
+		(philo + i)->time_of_eat = get_time();
+		if (pthread_create(&((philo + i)->pth), \
+					NULL, &get_start, philo + i))
+			return (ft_error("Error: philo_pthread_create"));
+		pthread_detach((philo + i)->pth);
+		usleep(50);
 	}
-	while(philo->param->stop);
+	while (philo->param->stop)
+		;
 	i = -1;
 	while (++i < num)
 		pthread_mutex_destroy(&philo->param->mutex_forks[i]);

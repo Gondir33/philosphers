@@ -6,7 +6,7 @@
 /*   By: sbendu <sbendu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 15:08:37 by sbendu            #+#    #+#             */
-/*   Updated: 2022/05/21 19:09:22 by sbendu           ###   ########.fr       */
+/*   Updated: 2022/06/04 13:45:12 by sbendu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_error(char *s)
 {
-	int len;
+	int	len;
 
 	len = 0;
 	while (s[len])
@@ -24,10 +24,21 @@ int	ft_error(char *s)
 	return (-1);
 }
 
-long	get_time()
+long	get_time(void)
 {
-	struct timeval t;
+	struct timeval	t;
 
 	gettimeofday(&t, NULL);
 	return (t.tv_sec * 1000 + t.tv_usec / 1000);
+}
+
+void	*ft_calloc(size_t count, size_t size)
+{
+	void	*ptr;
+
+	ptr = malloc(count * size);
+	if (ptr == 0)
+		return (0);
+	ptr = memset(ptr, 0, count * size);
+	return (ptr);
 }
