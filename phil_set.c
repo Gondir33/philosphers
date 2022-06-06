@@ -6,28 +6,28 @@
 /*   By: sbendu <sbendu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 18:01:06 by sbendu            #+#    #+#             */
-/*   Updated: 2022/06/04 13:46:44 by sbendu           ###   ########.fr       */
+/*   Updated: 2022/06/06 12:35:34 by sbendu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-void	init_phil(t_philo *phil, t_param *param, int i, pthread_mutex_t *forks)
+void	init_phil(t_philo *philo, t_param *param, int i, pthread_mutex_t *forks)
 {
-	phil->index = i;
-	phil->param = param;
-	phil->eat_count = 0;
-	phil->time_of_eat = 0;
-	phil->alive = 1;
+	philo->index = i;
+	philo->param = param;
+	philo->eat_count = 0;
+	philo->time_of_eat = get_time();
+	philo->alive = 1;
 	if (i == 0)
 	{
-		phil->fork_left = forks + param->number_phil - 1;
-		phil->fork_right = forks;
+		philo->fork_left = forks + param->number_phil - 1;
+		philo->fork_right = forks;
 	}
 	else
 	{
-		phil->fork_left = forks + i - 1;
-		phil->fork_right = forks + i;
+		philo->fork_left = forks + i - 1;
+		philo->fork_right = forks + i;
 	}
 }
 
