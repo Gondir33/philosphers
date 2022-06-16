@@ -6,7 +6,7 @@
 /*   By: sbendu <sbendu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 15:08:37 by sbendu            #+#    #+#             */
-/*   Updated: 2022/06/06 13:38:09 by sbendu           ###   ########.fr       */
+/*   Updated: 2022/06/16 11:06:39 by sbendu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,17 @@ void	*ft_calloc(size_t count, size_t size)
 		return (0);
 	ptr = memset(ptr, 0, count * size);
 	return (ptr);
+}
+
+void	my_usleep(long long time, t_param *param)
+{
+	long long	t;
+
+	t = get_time();
+	while (param->stop)
+	{
+		if (get_time() - t >= time)
+			break ;
+		usleep(500);
+	}
 }

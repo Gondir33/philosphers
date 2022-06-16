@@ -1,5 +1,5 @@
 make --dry-run --always-make --keep-going --print-directory
-make: Entering directory '/home/sbendu/projects/philosophers'
+make: Entering directory '/home/sbendu/projects/philosphers'
 gcc -pthread -Wall -Werror -Wextra -I ./ -c main.c -o main.o
 gcc -pthread -Wall -Werror -Wextra -I ./ -c lunch.c -o lunch.o
 gcc -pthread -Wall -Werror -Wextra -I ./ -c parsing.c -o parsing.o
@@ -7,5 +7,5 @@ gcc -pthread -Wall -Werror -Wextra -I ./ -c phil_set.c -o phil_set.o
 gcc -pthread -Wall -Werror -Wextra -I ./ -c utils.c -o utils.o
 gcc -pthread -Wall -Werror -Wextra -I ./ -c think.c -o think.o
 gcc main.o lunch.o parsing.o phil_set.o utils.o think.o -o philo -pthread -Wall -Werror -Wextra -o philo
-make: Leaving directory '/home/sbendu/projects/philosophers'
+make: Leaving directory '/home/sbendu/projects/philosphers'
  

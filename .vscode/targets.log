@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Jun  9 22:55:32 2022
+# Make data base, printed on Thu Jun 16 08:46:12 2022
 
 # Variables
 
@@ -31,7 +31,7 @@ VSCODE_LOG_NATIVE = false
 # automatic
 @F = $(notdir $@)
 # makefile
-CURDIR := /home/sbendu/projects/philosophers
+CURDIR := /home/sbendu/projects/philosphers
 # makefile
 SHELL = /bin/sh
 # environment
@@ -55,11 +55,11 @@ VSCODE_CWD = /mnt/c/Users/Medved/AppData/Local/Programs/Microsoft VS Code
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/sbendu/.vscode-server/bin/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5/bin/remote-cli:/home/sbendu/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/WindowsApps/CanonicalGroupLimited.UbuntuonWindows_2004.2022.1.0_x64__79rhkp1fndgsc:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/:/mnt/c/Users/Medved/anaconda3:/mnt/c/Users/Medved/anaconda3/Library/mingw-w64/bin:/mnt/c/Users/Medved/anaconda3/Library/usr/bin:/mnt/c/Users/Medved/anaconda3/Library/bin:/mnt/c/Users/Medved/anaconda3/Scripts:/mnt/c/Users/Medved/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Medved/AppData/Local/Programs/Microsoft VS Code/bin:/snap/bin:/home/sbendu/projects/fract-ol/minilibx-linux
+PATH = /home/sbendu/.vscode-server/bin/4af164ea3a06f701fe3e89a2bcbb421d2026b68f/bin/remote-cli:/home/sbendu/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/WindowsApps/CanonicalGroupLimited.UbuntuonWindows_2004.2022.1.0_x64__79rhkp1fndgsc:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/:/mnt/c/Users/Medved/anaconda3:/mnt/c/Users/Medved/anaconda3/Library/mingw-w64/bin:/mnt/c/Users/Medved/anaconda3/Library/usr/bin:/mnt/c/Users/Medved/anaconda3/Library/bin:/mnt/c/Users/Medved/anaconda3/Scripts:/mnt/c/Users/Medved/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Medved/AppData/Local/Programs/Microsoft VS Code/bin:/snap/bin:/home/sbendu/projects/fract-ol/minilibx-linux
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-a78d2088-a03b-4c8a-89f4-18357da802e5.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-bbcd5129-ad0c-404f-b5f2-bc64b74aa08c.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -71,7 +71,7 @@ DISPLAY = localhost:0.0
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
-PWD = /home/sbendu/projects/philosophers
+PWD = /home/sbendu/projects/philosphers
 # default
 .LOADED := 
 # environment
@@ -156,8 +156,10 @@ TERM = xterm-256color
 VSCODE_EXTHOST_WILL_SEND_SOCKET = true
 # environment
 WSL_DISTRO_NAME = Ubuntu
+# environment
+MOTD_SHOWN = update-motd
 # variable set hash-table stats:
-# Load=73/1024=7%, Rehash=0, Collisions=6/110=5%
+# Load=74/1024=7%, Rehash=0, Collisions=6/111=5%
 
 # Pattern-specific Variable Values
 
@@ -165,7 +167,7 @@ WSL_DISTRO_NAME = Ubuntu
 
 # Directories
 
-# . (device 2064, inode 81451): 12 files, no impossibilities.
+# . (device 2064, inode 738): 12 files, no impossibilities.
 
 # 12 files, no impossibilities in 1 directories.
 
@@ -214,7 +216,7 @@ philo: main.o lunch.o parsing.o phil_set.o utils.o think.o
 # Not a target:
 utils.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-06 14:38:09.017078316
+#  Last modified 2022-06-15 10:22:47.453057058
 #  File has been updated.
 #  Successfully updated.
 
@@ -226,28 +228,28 @@ utils.c:
 # Not a target:
 main.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-04 15:00:07.552181521
+#  Last modified 2022-06-15 10:22:47.453057058
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 parsing.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-21 20:26:14.787737224
+#  Last modified 2022-06-15 10:22:47.453057058
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-06 14:42:13.73707668
+#  Last modified 2022-06-15 10:22:47.453057058
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 phil_set.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-06 13:35:34.417103415
+#  Last modified 2022-06-15 10:22:47.453057058
 #  File has been updated.
 #  Successfully updated.
 
@@ -260,14 +262,14 @@ think.o:
 # Not a target:
 lunch.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-06 14:59:17.487069837
+#  Last modified 2022-06-15 10:22:47.453057058
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 think.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-06 14:59:34.677069722
+#  Last modified 2022-06-15 10:22:47.453057058
 #  File has been updated.
 #  Successfully updated.
 
@@ -276,6 +278,7 @@ fclean: clean
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
+ 
 #  recipe to execute (from 'Makefile', line 42):
 	rm -rf $(NAME)
 
@@ -288,7 +291,7 @@ fclean: clean
 # Not a target:
 philo.h:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-06 14:55:50.53707122
+#  Last modified 2022-06-15 10:22:47.453057058
 #  File has been updated.
 #  Successfully updated.
 
@@ -359,6 +362,6 @@ parsing.o:
 # strcache performance: lookups = 73 / hit rate = 57%
 # hash-table stats:
 # Load=31/8192=0%, Rehash=0, Collisions=1/73=1%
-# Finished Make data base on Thu Jun  9 22:55:32 2022
+# Finished Make data base on Thu Jun 16 08:46:12 2022
 
  

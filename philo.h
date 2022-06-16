@@ -6,7 +6,7 @@
 /*   By: sbendu <sbendu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 15:57:22 by sbendu            #+#    #+#             */
-/*   Updated: 2022/06/06 13:55:50 by sbendu           ###   ########.fr       */
+/*   Updated: 2022/06/16 10:21:27 by sbendu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ typedef struct s_param
 	long			time_of_start;
 	int				stop;
 	int				number_die;
+	pthread_mutex_t	mutex_printf;
 	pthread_mutex_t	*mutex_forks;
 	pthread_t		check_alive;
 }t_param;
@@ -46,7 +47,7 @@ typedef struct s_philo
 	pthread_mutex_t	*fork_left;
 }t_philo;
 
-void	parse_param(int argc, char **argv, t_param	*param);
+int		parse_param(int argc, char **argv, t_param	*param);
 int		phil_set(t_param *param, t_philo **phil);
 
 int		lunch(t_philo *philo);
@@ -56,5 +57,6 @@ long	get_time(void);
 int		ft_error(char *s);
 void	*ft_calloc(size_t count, size_t size);
 void	smart_think(t_philo *philo);
+void	my_usleep(long long time, t_param *param);
 
 #endif

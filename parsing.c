@@ -6,7 +6,7 @@
 /*   By: sbendu <sbendu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 11:17:59 by sbendu            #+#    #+#             */
-/*   Updated: 2022/05/21 19:26:14 by sbendu           ###   ########.fr       */
+/*   Updated: 2022/06/16 08:59:24 by sbendu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static int	ft_atoi(char *str)
 	return (result * sign);
 }
 
-void	parse_param(int argc, char **argv, t_param	*param)
+int	parse_param(int argc, char **argv, t_param	*param)
 {
 	param->number_phil = ft_atoi(argv[1]);
 	param->time_to_die = ft_atoi(argv[2]);
@@ -49,4 +49,7 @@ void	parse_param(int argc, char **argv, t_param	*param)
 	param->number_die = 0;
 	if (argc == 6)
 		param->number_of_times = ft_atoi(argv[5]);
+	if (pthread_mutex_init(&param->mutex_printf, NULL))
+		return (ft_error("Error: printf_mutex_init"));
+	return (0);
 }
