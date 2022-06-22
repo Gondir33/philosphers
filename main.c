@@ -6,7 +6,7 @@
 /*   By: sbendu <sbendu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 15:57:06 by sbendu            #+#    #+#             */
-/*   Updated: 2022/06/16 08:54:51 by sbendu           ###   ########.fr       */
+/*   Updated: 2022/06/22 12:30:53 by sbendu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ int	main(int argc, char **argv)
 {
 	t_param	param;
 	t_philo	*philo;
-	int		status;
 
 	if (argc < 5 || argc > 6)
 		return (ft_error("Error: wrong arguments"));
@@ -31,8 +30,8 @@ int	main(int argc, char **argv)
 		printf("%d 1 philosopher died\n", param.time_to_die);
 	}
 	else
-		status = lunch(philo);
+		lunch(philo);
 	free(philo);
 	free(param.mutex_forks);
-	return (status);
+	return (0);
 }

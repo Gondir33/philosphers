@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Jun 16 08:46:12 2022
+# Make data base, printed on Wed Jun 22 12:27:22 2022
 
 # Variables
 
@@ -55,11 +55,11 @@ VSCODE_CWD = /mnt/c/Users/Medved/AppData/Local/Programs/Microsoft VS Code
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/sbendu/.vscode-server/bin/4af164ea3a06f701fe3e89a2bcbb421d2026b68f/bin/remote-cli:/home/sbendu/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/WindowsApps/CanonicalGroupLimited.UbuntuonWindows_2004.2022.1.0_x64__79rhkp1fndgsc:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/:/mnt/c/Users/Medved/anaconda3:/mnt/c/Users/Medved/anaconda3/Library/mingw-w64/bin:/mnt/c/Users/Medved/anaconda3/Library/usr/bin:/mnt/c/Users/Medved/anaconda3/Library/bin:/mnt/c/Users/Medved/anaconda3/Scripts:/mnt/c/Users/Medved/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Medved/AppData/Local/Programs/Microsoft VS Code/bin:/snap/bin:/home/sbendu/projects/fract-ol/minilibx-linux
+PATH = /home/sbendu/.vscode-server/bin/30d9c6cd9483b2cc586687151bcbcd635f373630/bin/remote-cli:/home/sbendu/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/WindowsApps/CanonicalGroupLimited.UbuntuonWindows_2004.2022.1.0_x64__79rhkp1fndgsc:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/:/mnt/c/Program Files/dotnet/:/mnt/c/Users/Medved/anaconda3:/mnt/c/Users/Medved/anaconda3/Library/mingw-w64/bin:/mnt/c/Users/Medved/anaconda3/Library/usr/bin:/mnt/c/Users/Medved/anaconda3/Library/bin:/mnt/c/Users/Medved/anaconda3/Scripts:/mnt/c/Users/Medved/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Medved/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/Medved/.dotnet/tools:/snap/bin:/home/sbendu/projects/fract-ol/minilibx-linux
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-bbcd5129-ad0c-404f-b5f2-bc64b74aa08c.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-d6562aa6-15c4-4720-bca8-a40107412303.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -159,7 +159,7 @@ WSL_DISTRO_NAME = Ubuntu
 # environment
 MOTD_SHOWN = update-motd
 # variable set hash-table stats:
-# Load=74/1024=7%, Rehash=0, Collisions=6/111=5%
+# Load=74/1024=7%, Rehash=0, Collisions=6/105=6%
 
 # Pattern-specific Variable Values
 
@@ -167,9 +167,9 @@ MOTD_SHOWN = update-motd
 
 # Directories
 
-# . (device 2064, inode 738): 12 files, no impossibilities.
+# . (device 2064, inode 738): 19 files, no impossibilities.
 
-# 12 files, no impossibilities in 1 directories.
+# 19 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -181,17 +181,23 @@ MOTD_SHOWN = update-motd
 
 # Files
 
-# Not a target:
-phil_set.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+phil_set.o: phil_set.c philo.h main.c lunch.c parsing.c phil_set.c utils.c think.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'phil_set'
+#  Last modified 2022-06-18 11:07:32.174803831
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 36):
+	$(CC) $(CFLAGS) -I $(INCLD) -c $< -o $(<:.c=.o)
 
-# Not a target:
-lunch.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+lunch.o: lunch.c philo.h main.c lunch.c parsing.c phil_set.c utils.c think.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'lunch'
+#  Last modified 2022-06-18 11:07:32.124803831
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 36):
+	$(CC) $(CFLAGS) -I $(INCLD) -c $< -o $(<:.c=.o)
 
 all: philo
 #  Phony target (prerequisite of .PHONY).
@@ -199,24 +205,20 @@ all: philo
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/6=0%
+#  Successfully updated.
 
 philo: main.o lunch.o parsing.o phil_set.o utils.o think.o
 #  Implicit rule search has not been done.
-#  File does not exist.
+#  Last modified 2022-06-18 11:07:32.274803831
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/6=0%
+#  Successfully updated.
 #  recipe to execute (from 'Makefile', line 33):
 	$(CC) $^ -o $@ $(CFLAGS) -o $(NAME)
 
 # Not a target:
 utils.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-15 10:22:47.453057058
+#  Last modified 2022-06-16 11:06:39.021808652
 #  File has been updated.
 #  Successfully updated.
 
@@ -228,14 +230,14 @@ utils.c:
 # Not a target:
 main.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-15 10:22:47.453057058
+#  Last modified 2022-06-16 08:54:51.12811724
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 parsing.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-15 10:22:47.453057058
+#  Last modified 2022-06-16 08:59:24.598116226
 #  File has been updated.
 #  Successfully updated.
 
@@ -253,16 +255,19 @@ phil_set.c:
 #  File has been updated.
 #  Successfully updated.
 
-# Not a target:
-think.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+think.o: think.c philo.h main.c lunch.c parsing.c phil_set.c utils.c think.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'think'
+#  Last modified 2022-06-18 11:07:32.214803831
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 36):
+	$(CC) $(CFLAGS) -I $(INCLD) -c $< -o $(<:.c=.o)
 
 # Not a target:
 lunch.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-15 10:22:47.453057058
+#  Last modified 2022-06-16 11:33:20.131802719
 #  File has been updated.
 #  Successfully updated.
 
@@ -270,6 +275,7 @@ lunch.c:
 think.c:
 #  Implicit rule search has been done.
 #  Last modified 2022-06-15 10:22:47.453057058
+ 
 #  File has been updated.
 #  Successfully updated.
 
@@ -278,7 +284,6 @@ fclean: clean
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
- 
 #  recipe to execute (from 'Makefile', line 42):
 	rm -rf $(NAME)
 
@@ -291,7 +296,7 @@ fclean: clean
 # Not a target:
 philo.h:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-15 10:22:47.453057058
+#  Last modified 2022-06-16 10:21:27.611818701
 #  File has been updated.
 #  Successfully updated.
 
@@ -309,59 +314,47 @@ clean:
 #  recipe to execute (from 'Makefile', line 39):
 	rm -rf $(OBJ) 
 
-# Not a target:
-utils.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+utils.o: utils.c philo.h main.c lunch.c parsing.c phil_set.c utils.c think.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'utils'
+#  Last modified 2022-06-18 11:07:32.194803831
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 36):
+	$(CC) $(CFLAGS) -I $(INCLD) -c $< -o $(<:.c=.o)
 
 main.o: main.c philo.h main.c lunch.c parsing.c phil_set.c utils.c think.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'main'
-#  File does not exist.
+#  Last modified 2022-06-18 11:07:32.094803831
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := main.o
-# automatic
-# % := 
-# automatic
-# * := main
-# automatic
-# + := main.c philo.h main.c lunch.c parsing.c phil_set.c utils.c think.c
-# automatic
-# | := 
-# automatic
-# < := main.c
-# automatic
-# ^ := main.c philo.h lunch.c parsing.c phil_set.c utils.c think.c
-# automatic
-# ? := main.c philo.h lunch.c parsing.c phil_set.c utils.c think.c
-# variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=1/16=6%
+#  Successfully updated.
 #  recipe to execute (from 'Makefile', line 36):
 	$(CC) $(CFLAGS) -I $(INCLD) -c $< -o $(<:.c=.o)
 
-# Not a target:
-parsing.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+parsing.o: parsing.c philo.h main.c lunch.c parsing.c phil_set.c utils.c think.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'parsing'
+#  Last modified 2022-06-18 11:07:32.144803831
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 36):
+	$(CC) $(CFLAGS) -I $(INCLD) -c $< -o $(<:.c=.o)
 
 # files hash-table stats:
-# Load=22/1024=2%, Rehash=0, Collisions=3/65=5%
+# Load=22/1024=2%, Rehash=0, Collisions=8/150=5%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 31 / storage = 236 B / avg = 7 B
-# current buf: size = 8162 B / used = 236 B / count = 31 / avg = 7 B
+# strcache buffers: 1 (0) / strings = 36 / storage = 271 B / avg = 7 B
+# current buf: size = 8162 B / used = 271 B / count = 36 / avg = 7 B
 
-# strcache performance: lookups = 73 / hit rate = 57%
+# strcache performance: lookups = 165 / hit rate = 78%
 # hash-table stats:
-# Load=31/8192=0%, Rehash=0, Collisions=1/73=1%
-# Finished Make data base on Thu Jun 16 08:46:12 2022
+# Load=36/8192=0%, Rehash=0, Collisions=1/165=1%
+# Finished Make data base on Wed Jun 22 12:27:22 2022
 
  

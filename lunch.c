@@ -6,7 +6,7 @@
 /*   By: sbendu <sbendu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 19:48:12 by sbendu            #+#    #+#             */
-/*   Updated: 2022/06/16 11:33:20 by sbendu           ###   ########.fr       */
+/*   Updated: 2022/06/22 12:37:24 by sbendu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ void	check_monitor(t_philo *philo)
 	{
 		if (get_time() - (philo + i)->time_of_eat > philo->param->time_to_die)
 		{
-			show_actions(philo + i, "is died");
+			if (philo->eat_count != philo->param->number_of_times)
+				show_actions(philo + i, "is died");
 			philo->param->stop = 0;
 			break ;
 		}
@@ -43,7 +44,7 @@ void	check_monitor(t_philo *philo)
 			flag_all_eat++;
 	}
 	if (flag_all_eat == philo->param->number_phil)
-		philo->param->stop = 0;
+		philo->param->stop = 1;
 }
 
 static void	*get_start(void *args)
